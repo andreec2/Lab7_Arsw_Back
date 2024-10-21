@@ -1,0 +1,26 @@
+# Archivos y carpetas del IDE
+.idea/
+
+# Directorio de construcción de Maven
+target/
+
+# Archivos de logs
+*.log
+
+# Archivos generados automáticamente por Maven
+generated-sources/
+generated-test-sources/
+
+# Informes de pruebas
+surefire-reports/
+
+# Archivos de configuración específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# Dependencias descargadas por Maven (usualmente no se deben incluir en el control de versiones)
+.mvn/
