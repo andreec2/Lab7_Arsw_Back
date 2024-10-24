@@ -75,10 +75,13 @@ public class BlueprintApiController {
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (BlueprintNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (BlueprintPersistenceException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
 
 }

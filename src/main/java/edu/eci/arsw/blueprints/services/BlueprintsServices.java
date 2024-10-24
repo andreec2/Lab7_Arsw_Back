@@ -80,13 +80,16 @@ public class BlueprintsServices {
                 .findFirst()
                 .orElseThrow(() -> new BlueprintNotFoundException("Blueprint not found"));
 
-
+        if (existingBlueprint.getVersion() != updatedBlueprint.getVersion()) {
+            throw new BlueprintPersistenceException("El blueprint ha sido actualizado por otro usuario.");
+        }
 
         existingBlueprint.setPoints(updatedBlueprint.getPoints());
         existingBlueprint.setVersion(existingBlueprint.getVersion() + 1);
 
         saveBlueprint(existingBlueprint);
     }
+
 
 
     public void saveBlueprint(Blueprint blueprint) throws BlueprintPersistenceException {
