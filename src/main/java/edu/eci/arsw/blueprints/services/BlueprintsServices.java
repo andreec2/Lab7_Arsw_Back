@@ -96,4 +96,8 @@ public class BlueprintsServices {
         // Implementa la lógica para guardar el plano en tu repositorio
         bpp.updateBlueprints(blueprint);
     }
+
+    public void deleteBlueprint(String author, String bpname) throws BlueprintNotFoundException {
+        bpp.deleteBlueprint(author,bpname);
+    }
 }

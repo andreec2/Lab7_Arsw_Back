@@ -82,6 +82,18 @@ public class BlueprintApiController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+    @DeleteMapping("/blueprints/{author}/{bpname}")
+    public ResponseEntity<?> deleteBlueprint(@PathVariable("author") String author,
+                                             @PathVariable("bpname") String bpname) {
+        try {
+            blueprintService.deleteBlueprint(author, bpname);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Código 204: No Content
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // Código 500: Internal Server Error
+        }
+    }
+
 
 
 }

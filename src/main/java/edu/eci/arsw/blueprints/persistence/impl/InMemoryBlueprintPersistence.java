@@ -186,4 +186,10 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
             throw new BlueprintNotFoundException("Blueprint not found");
         }
     }
+
+    @Override
+    public void addBlueprintName(String author, String bpname, Blueprint blueprint) {
+
+    }
+
 }
